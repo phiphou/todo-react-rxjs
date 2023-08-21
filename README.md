@@ -1,6 +1,6 @@
 [![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](http://opensource.org/licenses/MIT)
 
-# React redux todo
+# React RxJs todo
 
 A minimalist todo app built using [React](https://reactjs.org/) and [Rx-Js](https://rxjs.dev/).
 
