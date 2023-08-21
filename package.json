@@ -1,0 +1,31 @@
+{
+  "name": "todo-react-rxjs",
+  "version": "0.0.1",
+  "description": "A react/redux todo app",
+  "license": "MIT",
+  "homepage": "https://github.com/phiphou/todo-react-rxjs#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phiphou/todo-react-rxjs"
+  },
+  "bugs": {
+    "url": "https://github.com/phiphou/todo-react-rxjs/issues"
+  },
+  "author": "Phiphou",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.1",
+    "react-transition-group": "^4.4.2",
+    "rxjs": "^7.5.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "vite": "^2.4.4"
+  }
+}

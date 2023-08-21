@@ -1,0 +1,161 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background: #efefef;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+ul {
+  list-style: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
+
+button,
+input[type='submit'] {
+  display: inline-block;
+  background: #1e6bd6;
+  border: 1px solid #1e6bd6;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 8px 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 1;
+  margin: 0.25rem 10px;
+}
+
+button:disabled {
+  background: #8fb8f3;
+  border: 1px solid #8fb8f3;
+  cursor: not-allowed;
+}
+
+input[type='text'] {
+  display: inline-block;
+  padding: 0.5rem;
+  background: transparent;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 50%;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #1e6bd6;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+.clearBtn {
+  margin-left: 0;
+}
+
+.todo {
+  box-shadow: 2px 2px 5px 0px rgb(109 109 109 / 15%);
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+}
+
+.todoLabel {
+  display: inline-block;
+  width: 100%;
+  margin-top: 6px;
+}
+
+button.deleteBtn {
+  background: #d61e2d;
+  border: 1px solid #d61e2d;
+  padding: 3px 5px;
+}
+
+input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.completed {
+  color: #c5c5c5;
+  text-decoration-line: line-through;
+}
+
+.infos {
+  margin-bottom: 10px;
+}
+
+button:disabled {
+  background: #8fb8f3;
+  border: 1px solid #8fb8f3;
+  cursor: not-allowed;
+}
+
+.brand {
+  height: 70px;
+  background: #6d6d6d;
+  color: white;
+  line-height: 70px;
+  display: flex;
+}
+
+img.logo {
+  width: 60px;
+}
+
+h2 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.header {
+  background-color: #6d6d6d;
+}
+
+.menu {
+  background-color: #6d6d6d;
+  display: flex;
+}
+
+.menu-item {
+  background-color: #60849e;
+  height: 35px;
+  line-height: 35px;
+  font-weight: 500;
+  color: white;
+  padding: 0 10px;
+}
+
+.active .menu-item {
+  background-color: #6797b9;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
