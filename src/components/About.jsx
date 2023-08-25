@@ -21,6 +21,9 @@ export default function About() {
       as a routing solution.
       <br />
       <br />
+      It uses <a href="https://rxjs.dev/">Rx-Js</a>  as a global store mechanism.
+      <br />
+      <br />
       You can add a task, delete it and toggle task completed status.
       <br />
       <br />

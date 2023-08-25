@@ -46,12 +46,11 @@ export const useTodos = () => {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    todos$.subscribe((todos) => setTodos([...todos]))
+    todos$.subscribe((todos) => {
+      setTodos([...todos])
+      localStorage.setItem('todos', JSON.stringify(todos))
+    })
   }, [])
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos))
-  }, [todos])
 
   return todos
 }
