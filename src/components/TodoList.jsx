@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { todos$, useTodos } from '../rxjs'
+import React from 'react'
+import { useTodos } from '../rxjs'
 import Todo from './Todo'
+import TodoFilter from './TodoFilter'
 import TodoForm from './TodoForm'
 
 const TodoList = () => {
-  const todos = useTodos()
+  const [todos, filteredTodos] = useTodos()
 
   return (
     <div className="container">
@@ -13,9 +14,10 @@ const TodoList = () => {
         {todos.filter((todo) => todo.completed).length} of {todos.length}{' '}
         completed
       </div>
+      <TodoFilter />
       <TodoForm />
       <ul>
-        {todos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <Todo key={todo.id} todo={todo} />
         ))}
       </ul>

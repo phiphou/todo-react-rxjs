@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react'
 import { BehaviorSubject } from 'rxjs'
 
+export const FILTER_ALL = 'FILTER_ALL'
+export const FILTER_COMPLETED = 'FILTER_COMPLETED'
+export const FILTER_UNCOMPLETED = 'FILTER_UNCOMPLETED'
+
 let todos = localStorage.getItem('todos')
   ? JSON.parse(localStorage.getItem('todos'))
   : []
 
 export const todos$ = new BehaviorSubject(todos)
+
+export const filter$ = new BehaviorSubject(FILTER_ALL)
 
 export const addTodo = (text) => {
   todos = [
@@ -42,15 +48,38 @@ export const clearAll = () => {
   todos$.next(todos)
 }
 
+export const updateFilter = (filter) => {
+  filter$.next(filter)
+}
+
 export const useTodos = () => {
-  const [todos, setTodos] = useState([])
+  const [todosS, setTodosS] = useState(todos)
+  const [filteredTodos, setFilteredTodos] = useState([])
+  const [filter, setFilter] = useState(FILTER_ALL)
 
   useEffect(() => {
     todos$.subscribe((todos) => {
-      setTodos([...todos])
+      setTodosS([...todos])
+      setFilteredTodos([...todos])
       localStorage.setItem('todos', JSON.stringify(todos))
+    })
+
+    filter$.subscribe((filterMode) => {
+      setFilter(filterMode)
+      setFilteredTodos(
+        todos.filter((todo) => {
+          switch (filterMode) {
+            case FILTER_ALL:
+              return true
+            case FILTER_COMPLETED:
+              return todo.completed
+            case FILTER_UNCOMPLETED:
+              return !todo.completed
+          }
+        })
+      )
     })
   }, [])
 
-  return todos
+  return [todosS, filteredTodos]
 }
